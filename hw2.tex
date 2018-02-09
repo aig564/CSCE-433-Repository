@@ -119,6 +119,44 @@ We are given $G = (\{S,X,Y\},\{a,b\},R,S)$. We define our NFA $N$ as follows: we
 \item (10 points) Use the algorithm given in class (and lecture notes)
 to convert the DFA in Exercise 1.21(b) into a regular grammar.
 
+\begin{solution}
+We are given the following DFA.\\
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (34,-17.6) circle (3);
+\draw (34,-17.6) node {$1$};
+\draw [black] (34,-17.6) circle (2.4);
+\draw [black] (50.3,-17.6) circle (3);
+\draw (50.3,-17.6) node {$2$};
+\draw [black] (42.2,-31.2) circle (3);
+\draw (42.2,-31.2) node {$3$};
+\draw [black] (42.2,-31.2) circle (2.4);
+\draw [black] (25.9,-17.6) -- (31,-17.6);
+\fill [black] (31,-17.6) -- (30.2,-17.1) -- (30.2,-18.1);
+\draw [black] (37,-17.6) -- (47.3,-17.6);
+\fill [black] (47.3,-17.6) -- (46.5,-17.1) -- (46.5,-18.1);
+\draw (42.15,-18.1) node [below] {$a,b$};
+\draw [black] (51.796,-15.013) arc (177.69007:-110.30993:2.25);
+\draw (56.53,-12.52) node [right] {$a$};
+\fill [black] (53.26,-17.21) -- (54.04,-17.75) -- (54.08,-16.75);
+\draw [black] (48.76,-20.18) -- (43.74,-28.62);
+\fill [black] (43.74,-28.62) -- (44.57,-28.19) -- (43.71,-27.68);
+\draw (45.61,-23.14) node [left] {$b$};
+\draw [black] (40.65,-28.63) -- (35.55,-20.17);
+\fill [black] (35.55,-20.17) -- (35.53,-21.11) -- (36.39,-20.6);
+\draw (38.74,-23.13) node [right] {$a$};
+\draw [black] (43.74,-28.62) -- (48.76,-20.18);
+\fill [black] (48.76,-20.18) -- (47.93,-20.61) -- (48.79,-21.12);
+\draw (46.89,-25.66) node [right] {$b$};
+\end{tikzpicture}
+\end{center}
+We will start constructing our regular grammar $G$ by creating a variable for each state in the DFT with $S$ being our starting variable, $V=\{S,A,B\}$. We will leave $\Sigma = \{a,b\}$. Our rules will be as follows: \\
+$S \rightarrow aA | bA$ \\ 
+$A \rightarrow aA | bB | b $ \\
+$B \rightarrow bA | aS | a$
+\end{solution}
+
 \item (20 points) Use the pumping lemma for regular languages
 to show that the following languages are not regular
 (you might find it useful to study the solutions in the textbook
