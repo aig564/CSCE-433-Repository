@@ -78,6 +78,43 @@ S &\rightarrow aS | aX | a \\
 X &\rightarrow bS | aY \\
 Y &\rightarrow bS
 \end{align*}
+\begin{solution}
+We are given $G = (\{S,X,Y\},\{a,b\},R,S)$. We define our NFA $N$ as follows: we create a state for each variable plus one finishing state, set the stating state to the one representing our variable $S$, and set the transitions to match the set of rules plus an extra transition from $q_S$ to $q_F$ because we have that S can turn into a single terminal $a$. $$N = (Q=\{q_S,q_X,q_Y,q_F\},\Sigma = \{a,b\},\delta = Q*\Sigma\rightarrow Q,q_S,F=\{q_F\})$$
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (26.9,-29.3) circle (3);
+\draw (26.9,-29.3) node {$q_X$};
+\draw [black] (43.5,-29.3) circle (3);
+\draw (43.5,-29.3) node {$q_Y$};
+\draw [black] (47.5,-17.4) circle (3);
+\draw (47.5,-17.4) node {$q_F$};
+\draw [black] (47.5,-17.4) circle (2.4);
+\draw [black] (32.4,-16.5) circle (3);
+\draw (32.4,-16.5) node {$q_S$};
+\draw [black] (33.169,-13.612) arc (192.81407:-95.18593:2.25);
+\draw (37.8,-10.93) node [above] {$a$};
+\fill [black] (35.16,-15.35) -- (36.05,-15.66) -- (35.83,-14.69);
+\draw [black] (25.1,-10.4) -- (30.1,-14.58);
+\fill [black] (30.1,-14.58) -- (29.8,-13.68) -- (29.16,-14.45);
+\draw [black] (35.39,-16.68) -- (44.51,-17.22);
+\fill [black] (44.51,-17.22) -- (43.74,-16.67) -- (43.68,-17.67);
+\draw (39.88,-17.5) node [below] {$a$};
+\draw [black] (28.08,-26.54) -- (31.22,-19.26);
+\fill [black] (31.22,-19.26) -- (30.44,-19.79) -- (31.36,-20.19);
+\draw (30.38,-23.86) node [right] {$b$};
+\draw [black] (31.22,-19.26) -- (28.08,-26.54);
+\fill [black] (28.08,-26.54) -- (28.86,-26.01) -- (27.94,-25.61);
+\draw (28.92,-21.94) node [left] {$a$};
+\draw [black] (29.9,-29.3) -- (40.5,-29.3);
+\fill [black] (40.5,-29.3) -- (39.7,-28.8) -- (39.7,-29.8);
+\draw (35.2,-29.8) node [below] {$a$};
+\draw [black] (41.53,-27.03) -- (34.37,-18.77);
+\fill [black] (34.37,-18.77) -- (34.51,-19.7) -- (35.27,-19.04);
+\draw (38.49,-21.45) node [right] {$b$};
+\end{tikzpicture}
+\end{center}
+\end{solution}
 
 \item (10 points) Use the algorithm given in class (and lecture notes)
 to convert the DFA in Exercise 1.21(b) into a regular grammar.
