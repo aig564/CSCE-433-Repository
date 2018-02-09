@@ -55,9 +55,10 @@ languages:
         at least one $a$ and every $a$ is immediately followed by at least
         on $b$
 	\begin{solution}
-	$G = (\{S,A\}, \{a,b\}, R, S)$ where the rules in $R$ are as follows\\ 
-	$S \rightarrow aA | a$ \\ 
-	$A \rightarrow bA | b | bS $
+	$G = (\{S,A,B\}, \{a,b\}, R, S)$ where the rules in $R$ are as follows\\ 
+	$S \rightarrow aA | bB | a$ \\ 
+	$A \rightarrow bA | b | bS $ \\
+	$B \rightarrow bB | bS | a$
 	\end{solution}
   \item (CSCE 627 students only) all strings over $\{a,b\}$ with an
         even number of $a$'s and an odd number of $b$'s
