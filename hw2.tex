@@ -61,6 +61,13 @@ languages:
 	\end{solution}
   \item (CSCE 627 students only) all strings over $\{a,b\}$ with an
         even number of $a$'s and an odd number of $b$'s
+	\begin{solution}
+	$G = (\{S,A\}, \{a,b\}, R, S)$ where the rules in $R$ are as follows\\ 
+	$S \rightarrow aA | bB $ \\ 
+	$A \rightarrow aS | bC$ \\
+	$B \rightarrow aS | bC $ \\
+	$C \rightarrow b | bA | aS$ \\
+	\end{solution}
   \end{enumerate}
 
 \item (10 points) Use the algorithm given in class (and lecture notes)
