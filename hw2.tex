@@ -33,10 +33,9 @@ languages:
   \begin{enumerate}
   \item all strings over $\{a,b\}$ that do not contain $ab$
 \begin{solution}
-	$G = (\{S,A,B\}, \{a,b\}, R, S)$ where the rules in $R$ are as follows\\ 
-	$S \rightarrow bS | bA | a|aB| \epsilon$ \\ 
+	$G = (\{S,A\}, \{a,b\}, R, S)$ where the rules in $R$ are as follows\\ 
+	$S \rightarrow bS | bA | aA | b | a | \epsilon$ \\ 
 	$A \rightarrow aA |a$ \\
-	$B \rightarrow aB |a$ 
 	\end{solution}
   \item all binary strings that contain at least three 1's
   \begin{solution}
