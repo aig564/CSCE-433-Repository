@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage{times,amsmath,amsthm,latexsym,fullpage}
+
+% for tikz (drawing automata)
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+
+\setlength{\parskip}{.1in}
+
+\renewcommand{\baselinestretch}{1.1} 
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+
+
+\begin{document}
+
+\begin{center}
+CSCE 433 / CSCE 627:  Homework 2 \\
+\end{center}
+
+\begin{itemize}
+\item Don't forget to review the general instructions (on Piazza)!
+
+\item {\bf Due Wed, Feb 14, 11:30 AM}
+\end{itemize}
+
+\begin{enumerate}
+
+\item (20 points) Give a regular grammar for each of the following
+languages:
+  \begin{enumerate}
+  \item all strings over $\{a,b\}$ that do not contain $ab$
+\begin{solution}
+	$G = (\{S,A\}, \{a,b\}, R, S)$ where the rules in $R$ are as follows\\ 
+	$S \rightarrow bS | bA | a| \epsilon$ \\ 
+	$A \rightarrow aA | \epsilon$
+	\end{solution}
+  \item all binary strings that contain at least three 1's
+  \begin{solution}
+	$G = (\{S,A,B,C\}, \{0,1\}, R, S)$ where the rules in $R$ are as follows\\ 
+	$S \rightarrow 0S | 1A $ \\ 
+	$A \rightarrow 1B | 0A$ \\
+	$B \rightarrow 1C | 0B$ \\
+	$C \rightarrow 0C | 1C | 0 | 1$
+	\end{solution}
+  \item all binary strings $w$ such that every odd position in $w$ is a 1
+    \begin{solution}
+	$G = (\{S, A\}, \{0,1\}, R, S)$ where the rules in $R$ are as follows\\ 
+	$S \rightarrow 1A | 1 | \epsilon$ \\ 
+	$A \rightarrow 0S | 0$ 
+	\end{solution}
+  \item (CSCE 433 students only) all strings over $\{a,b\}$ that contain
+        at least one $a$ and every $a$ is immediately followed by at least
+        on $b$
+  \item (CSCE 627 students only) all strings over $\{a,b\}$ with an
+        even number of $a$'s and an odd number of $b$'s
+  \end{enumerate}
+
+\item (10 points) Use the algorithm given in class (and lecture notes)
+to convert the following regular grammar into an NFA:
+\begin{align*}
+S &\rightarrow aS | aX | a \\
+X &\rightarrow bS | aY \\
+Y &\rightarrow bS
+\end{align*}
+
+\item (10 points) Use the algorithm given in class (and lecture notes)
+to convert the DFA in Exercise 1.21(b) into a regular grammar.
+
+\item (20 points) Use the pumping lemma for regular languages
+to show that the following languages are not regular
+(you might find it useful to study the solutions in the textbook
+to Exercise 1.29, parts (a) and (c)):
+  \begin{enumerate}
+  \item $\{www | w \in \{a,b\}^*\}$
+  \item $\{a^i (ab)^j (ca)^{2i} | i > 0, j > 0 \}$
+  \item the set of properly nested parentheses (e.g., includes ``()(())()''
+        but not ``)(``)
+  \item (CSCE 433 students only) $\{a^n b^m | n < m \}$
+  \item (CSCE 627 students only) $\{a^i b^j c^{2j} | i \ge 0, j \ge 0 \}$
+  \end{enumerate}
+
+\item (20 points) Problem 1.46, parts (a) and (c).
+
+\end{enumerate}
+
+*** more will be added about context-free languages ***
+
+\end{document}
